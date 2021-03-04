@@ -1,0 +1,10 @@
+374006bed3c4fb455cdb6175d25899cc *DESCRIPTION
+6ae4720499e2163b77977115d29ef7c4 *NAMESPACE
+5949d61dc24e87c0b6b8c76c7e67686f *R/EasyDescribe.R
+e551dd3b1ba70e17bea5780c7097e62c *R/T2D.R
+32299e32d6845cedee626ead6f5523e7 *R/fundescribe.R
+a57f118de08c86d04c40880fb2ca89ed *build/partial.rdb
+fbb43eb6cc79f59bc8261e8384b4f977 *data/T2D.rda
+8e97ef8735b61267a2f81f289ea25f6e *man/EasyDescribe-package.Rd
+0e7fc15e58951c3aaac2e5968ddfc7ba *man/T2D.Rd
+72446b6c237e22f3527f723205e43f8a *man/fundescribe.Rd
