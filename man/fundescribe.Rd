@@ -4,7 +4,7 @@
 \alias{fundescribe}
 \title{A Convenient Way of Descriptive Statistics}
 \usage{
-fundescribe(x, y, data = NULL, na.rm = TRUE)
+fundescribe(x, y, data = NULL, na.rm = TRUE, norm.t = NULL)
 }
 \arguments{
 \item{x}{The variable to be statistically described.}
@@ -14,6 +14,8 @@ fundescribe(x, y, data = NULL, na.rm = TRUE)
 \item{data}{An optional parameter, the name of the data containing x and y.}
 
 \item{na.rm}{An optional parameter, if FALSE, the information of NA will be given.}
+
+\item{norm.t}{An optional parameter, there are seven normal test methods available: c("ks.test", "shapiro.test", "cvm.test", "lillie.test", "pearson.test", "sf.test", "ad.test").}
 }
 \value{
 No return value, called for side effects.
@@ -26,7 +28,7 @@ This function can perform descriptive statistics according to different data typ
 }
 \examples{
 data(T2D)
-fundescribe(T2D$age)
+fundescribe(T2D$age, norm.t = c("lillie.test"))
 fundescribe(gender, data = T2D)
 fundescribe(education, diabetes, data = T2D)
 fundescribe(T2D$glucose, T2D$diabetes)
@@ -82,6 +84,8 @@ Myles, H. and Douglas, A. W. (1973) \emph{Nonparametric Statistical Methods.}
 
 Rahman, M. and Tiwari, R. (2012) Pairwise comparisons in the analysis of carcinogenicity data.
 \emph{Health}, 4, 910-918. \doi{doi:10.4236/health.2012.410139}
+
+Thode, H. J. (2002) \emph{Testing for Normality.} \doi{10.1201/9780203910894}
 }
 \author{
 Xiuquan Nie, niexiuquan1995@foxmail.com
