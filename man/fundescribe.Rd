@@ -7,9 +7,9 @@
 fundescribe(x, y, data = NULL, na.rm = TRUE, norm.t = NULL)
 }
 \arguments{
-\item{x}{The variable to be statistically described.}
+\item{x}{A vector or a factor. A continuous variable or a categorical variable.}
 
-\item{y}{An optional variable need to be a factor, or a character, or a logical vector.}
+\item{y}{A vector or a factor. A continuous variable or a categorical variable.}
 
 \item{data}{An optional parameter, the name of the data containing x and y.}
 
@@ -24,13 +24,14 @@ No return value, called for side effects.
 This function can perform descriptive statistics according to different data types.
 }
 \details{
-This function can perform descriptive statistics according to different data types. If the data is a continuous variable, the mean and standard deviation or median and quartile are automatically output; if the data is a categorical variable, the number and percentage are automatically output. In addition, if you enter two variables, the first variable will be described hierarchically based on the second variable and the statistical differences between different groups will be compared using appropriate statistical methods. And for groups more than two, the post hoc test will be applied.
+This function can perform descriptive statistics according to different data types. If the data is a continuous variable, the mean and standard deviation or median and quartiles are automatically output; if the data is a categorical variable, the number and percentage are automatically output. In addition, if you enter two variables in this function, the two variables will be described and their relationships will be tested automatically according to their data types. For example, if one of the two input variables is a categorical variable, another variable will be described hierarchically based on the categorical variable and the statistical differences between different groups will be compared using appropriate statistical methods. And for groups of more than two, the post hoc test will be applied.
 }
 \examples{
 data(T2D)
 fundescribe(T2D$age, norm.t = c("lillie.test"))
 fundescribe(gender, data = T2D)
 fundescribe(education, diabetes, data = T2D)
+fundescribe(glucose, age, data = T2D)
 fundescribe(T2D$glucose, T2D$diabetes)
 }
 \references{
@@ -86,6 +87,12 @@ Rahman, M. and Tiwari, R. (2012) Pairwise comparisons in the analysis of carcino
 \emph{Health}, 4, 910-918. \doi{doi:10.4236/health.2012.410139}
 
 Thode, H. J. (2002) \emph{Testing for Normality.} \doi{10.1201/9780203910894}
+
+Jonckheere, A. R. (1954) A distribution-free k-sample test again ordered alternatives.
+\emph{Biometrika}, 41, 133-145. \doi{10.2307/2333011}
+
+Terpstra, T. J. (1952) The asymptotic normality and consistency of Kendall's test against trend, when ties are present in one ranking.
+\emph{Indagationes Mathematicae}, 14, 327-333. \doi{10.1016/S1385-7258(52)50043-X}
 }
 \author{
 Xiuquan Nie, niexiuquan1995@foxmail.com
